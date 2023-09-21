@@ -1,0 +1,13 @@
+[2023-09-19T14:18:18.957+0545] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: project_dag.convert_to_csv manual__2023-09-19T08:33:11.458112+00:00 [queued]>
+[2023-09-19T14:18:18.962+0545] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: project_dag.convert_to_csv manual__2023-09-19T08:33:11.458112+00:00 [queued]>
+[2023-09-19T14:18:18.962+0545] {taskinstance.py:1359} INFO - Starting attempt 1 of 1
+[2023-09-19T14:18:18.973+0545] {taskinstance.py:1380} INFO - Executing <Task(PythonOperator): convert_to_csv> on 2023-09-19 08:33:11.458112+00:00
+[2023-09-19T14:18:18.976+0545] {standard_task_runner.py:57} INFO - Started process 35977 to run task
+[2023-09-19T14:18:18.980+0545] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'project_dag', 'convert_to_csv', 'manual__2023-09-19T08:33:11.458112+00:00', '--job-id', '120', '--raw', '--subdir', 'DAGS_FOLDER/project_dag.py', '--cfg-path', '/tmp/tmpvbnvepk3']
+[2023-09-19T14:18:18.982+0545] {standard_task_runner.py:85} INFO - Job 120: Subtask convert_to_csv
+[2023-09-19T14:18:19.022+0545] {task_command.py:415} INFO - Running <TaskInstance: project_dag.convert_to_csv manual__2023-09-19T08:33:11.458112+00:00 [running]> on host ubuntu-Lenovo-Legion-5-15ARH05
+[2023-09-19T14:18:19.068+0545] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='project_dag' AIRFLOW_CTX_TASK_ID='convert_to_csv' AIRFLOW_CTX_EXECUTION_DATE='2023-09-19T08:33:11.458112+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-09-19T08:33:11.458112+00:00'
+[2023-09-19T14:18:19.073+0545] {python.py:194} INFO - Done. Returned value was: None
+[2023-09-19T14:18:19.075+0545] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=project_dag, task_id=convert_to_csv, execution_date=20230919T083311, start_date=20230919T083318, end_date=20230919T083319
+[2023-09-19T14:18:19.110+0545] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-09-19T14:18:19.134+0545] {taskinstance.py:2776} INFO - 1 downstream tasks scheduled from follow-on schedule check

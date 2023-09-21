@@ -1,0 +1,24 @@
+[2023-09-19T13:32:59.295+0545] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: project_dag.file_sensor_task __airflow_temporary_run_2023-09-19T07:47:48.039632+00:00__ [queued]>
+[2023-09-19T13:32:59.299+0545] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: project_dag.file_sensor_task __airflow_temporary_run_2023-09-19T07:47:48.039632+00:00__ [queued]>
+[2023-09-19T13:32:59.299+0545] {taskinstance.py:1359} INFO - Starting attempt 1 of 1
+[2023-09-19T13:32:59.309+0545] {taskinstance.py:1380} INFO - Executing <Task(FileSensor): file_sensor_task> on 2023-09-19 00:00:00+00:00
+[2023-09-19T13:32:59.313+0545] {standard_task_runner.py:57} INFO - Started process 12814 to run task
+[2023-09-19T13:32:59.316+0545] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'project_dag', 'file_sensor_task', '__airflow_temporary_run_2023-09-19T07:47:48.039632+00:00__', '--job-id', '91', '--raw', '--subdir', 'DAGS_FOLDER/project_dag.py', '--cfg-path', '/tmp/tmpovlk7hc8']
+[2023-09-19T13:32:59.318+0545] {standard_task_runner.py:85} INFO - Job 91: Subtask file_sensor_task
+[2023-09-19T13:32:59.355+0545] {task_command.py:415} INFO - Running <TaskInstance: project_dag.file_sensor_task __airflow_temporary_run_2023-09-19T07:47:48.039632+00:00__ [running]> on host ubuntu-Lenovo-Legion-5-15ARH05
+[2023-09-19T13:32:59.404+0545] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='project_dag' AIRFLOW_CTX_TASK_ID='file_sensor_task' AIRFLOW_CTX_EXECUTION_DATE='2023-09-19T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='__airflow_temporary_run_2023-09-19T07:47:48.039632+00:00__'
+[2023-09-19T13:32:59.407+0545] {base.py:73} INFO - Using connection ID 'fs_default' for task execution.
+[2023-09-19T13:32:59.407+0545] {filesystem.py:64} INFO - Poking for file /tmp/user_data.csv
+[2023-09-19T13:33:29.427+0545] {base.py:73} INFO - Using connection ID 'fs_default' for task execution.
+[2023-09-19T13:33:29.428+0545] {filesystem.py:64} INFO - Poking for file /tmp/user_data.csv
+[2023-09-19T13:33:59.458+0545] {base.py:73} INFO - Using connection ID 'fs_default' for task execution.
+[2023-09-19T13:33:59.458+0545] {filesystem.py:64} INFO - Poking for file /tmp/user_data.csv
+[2023-09-19T13:33:59.458+0545] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/ubuntu/Desktop/Airflow/venv_airflow/lib/python3.10/site-packages/airflow/sensors/base.py", line 274, in execute
+    raise AirflowSensorTimeout(message)
+airflow.exceptions.AirflowSensorTimeout: Sensor has timed out; run duration of 60.05381003000002 seconds exceeds the specified timeout of 40.0.
+[2023-09-19T13:33:59.461+0545] {taskinstance.py:1398} INFO - Immediate failure requested. Marking task as FAILED. dag_id=project_dag, task_id=file_sensor_task, execution_date=20230919T000000, start_date=20230919T074759, end_date=20230919T074859
+[2023-09-19T13:33:59.472+0545] {standard_task_runner.py:104} ERROR - Failed to execute job 91 for task file_sensor_task (Sensor has timed out; run duration of 60.05381003000002 seconds exceeds the specified timeout of 40.0.; 12814)
+[2023-09-19T13:33:59.503+0545] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-09-19T13:33:59.532+0545] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,32 @@
+[2023-09-18T15:57:16.304+0545] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: project_dag.load_to_postgres_task manual__2023-09-18T10:12:05.887455+00:00 [queued]>
+[2023-09-18T15:57:16.309+0545] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: project_dag.load_to_postgres_task manual__2023-09-18T10:12:05.887455+00:00 [queued]>
+[2023-09-18T15:57:16.309+0545] {taskinstance.py:1359} INFO - Starting attempt 1 of 1
+[2023-09-18T15:57:16.318+0545] {taskinstance.py:1380} INFO - Executing <Task(PostgresOperator): load_to_postgres_task> on 2023-09-18 10:12:05.887455+00:00
+[2023-09-18T15:57:16.321+0545] {standard_task_runner.py:57} INFO - Started process 120705 to run task
+[2023-09-18T15:57:16.325+0545] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'project_dag', 'load_to_postgres_task', 'manual__2023-09-18T10:12:05.887455+00:00', '--job-id', '73', '--raw', '--subdir', 'DAGS_FOLDER/project_dag.py', '--cfg-path', '/tmp/tmpab1j6yld']
+[2023-09-18T15:57:16.327+0545] {standard_task_runner.py:85} INFO - Job 73: Subtask load_to_postgres_task
+[2023-09-18T15:57:16.362+0545] {task_command.py:415} INFO - Running <TaskInstance: project_dag.load_to_postgres_task manual__2023-09-18T10:12:05.887455+00:00 [running]> on host ubuntu-Lenovo-Legion-5-15ARH05
+[2023-09-18T15:57:16.407+0545] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='project_dag' AIRFLOW_CTX_TASK_ID='load_to_postgres_task' AIRFLOW_CTX_EXECUTION_DATE='2023-09-18T10:12:05.887455+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-09-18T10:12:05.887455+00:00'
+[2023-09-18T15:57:16.408+0545] {sql.py:274} INFO - Executing: COPY user_input_table FROM '/tmp/user_data.csv' DELIMITER ',' CSV HEADER;
+[2023-09-18T15:57:16.411+0545] {base.py:73} INFO - Using connection ID '***_conn_1' for task execution.
+[2023-09-18T15:57:16.452+0545] {base.py:73} INFO - Using connection ID '***_conn_1' for task execution.
+[2023-09-18T15:57:16.462+0545] {sql.py:418} INFO - Running statement: COPY user_input_table FROM '/tmp/user_data.csv' DELIMITER ',' CSV HEADER;, parameters: None
+[2023-09-18T15:57:16.464+0545] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/ubuntu/Desktop/Airflow/venv_airflow/lib/python3.10/site-packages/airflow/providers/common/sql/operators/sql.py", line 280, in execute
+    output = hook.run(
+  File "/home/ubuntu/Desktop/Airflow/venv_airflow/lib/python3.10/site-packages/airflow/providers/common/sql/hooks/sql.py", line 392, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/ubuntu/Desktop/Airflow/venv_airflow/lib/python3.10/site-packages/airflow/providers/common/sql/hooks/sql.py", line 423, in _run_command
+    cur.execute(sql_statement)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "user_input_table_pkey"
+DETAIL:  Key (id)=(5171308) already exists.
+CONTEXT:  COPY user_input_table, line 2
+
+[2023-09-18T15:57:16.467+0545] {taskinstance.py:1398} INFO - Marking task as FAILED. dag_id=project_dag, task_id=load_to_***_task, execution_date=20230918T101205, start_date=20230918T101216, end_date=20230918T101216
+[2023-09-18T15:57:16.474+0545] {standard_task_runner.py:104} ERROR - Failed to execute job 73 for task load_to_***_task (duplicate key value violates unique constraint "user_input_table_pkey"
+DETAIL:  Key (id)=(5171308) already exists.
+CONTEXT:  COPY user_input_table, line 2
+; 120705)
+[2023-09-18T15:57:16.496+0545] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-09-18T15:57:16.509+0545] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

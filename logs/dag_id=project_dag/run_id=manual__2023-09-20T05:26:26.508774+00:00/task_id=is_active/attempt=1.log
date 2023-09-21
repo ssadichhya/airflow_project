@@ -1,0 +1,15 @@
+[2023-09-20T11:11:28.806+0545] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: project_dag.is_active manual__2023-09-20T05:26:26.508774+00:00 [queued]>
+[2023-09-20T11:11:28.811+0545] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: project_dag.is_active manual__2023-09-20T05:26:26.508774+00:00 [queued]>
+[2023-09-20T11:11:28.811+0545] {taskinstance.py:1359} INFO - Starting attempt 1 of 1
+[2023-09-20T11:11:28.821+0545] {taskinstance.py:1380} INFO - Executing <Task(HttpSensor): is_active> on 2023-09-20 05:26:26.508774+00:00
+[2023-09-20T11:11:28.824+0545] {standard_task_runner.py:57} INFO - Started process 9149 to run task
+[2023-09-20T11:11:28.827+0545] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'project_dag', 'is_active', 'manual__2023-09-20T05:26:26.508774+00:00', '--job-id', '136', '--raw', '--subdir', 'DAGS_FOLDER/project_dag.py', '--cfg-path', '/tmp/tmps5kqt9l0']
+[2023-09-20T11:11:28.828+0545] {standard_task_runner.py:85} INFO - Job 136: Subtask is_active
+[2023-09-20T11:11:28.850+0545] {task_command.py:415} INFO - Running <TaskInstance: project_dag.is_active manual__2023-09-20T05:26:26.508774+00:00 [running]> on host ubuntu-Lenovo-Legion-5-15ARH05
+[2023-09-20T11:11:28.899+0545] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='project_dag' AIRFLOW_CTX_TASK_ID='is_active' AIRFLOW_CTX_EXECUTION_DATE='2023-09-20T05:26:26.508774+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-09-20T05:26:26.508774+00:00'
+[2023-09-20T11:11:28.900+0545] {http.py:121} INFO - Poking: users/
+[2023-09-20T11:11:28.904+0545] {base.py:73} INFO - Using connection ID 'project_conn' for task execution.
+[2023-09-20T11:11:29.359+0545] {base.py:287} INFO - Success criteria met. Exiting.
+[2023-09-20T11:11:29.365+0545] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=project_dag, task_id=is_active, execution_date=20230920T052626, start_date=20230920T052628, end_date=20230920T052629
+[2023-09-20T11:11:29.400+0545] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-09-20T11:11:29.440+0545] {taskinstance.py:2776} INFO - 1 downstream tasks scheduled from follow-on schedule check
